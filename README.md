@@ -11,12 +11,15 @@
 ### `Functionalities`
 
 - Add Book to Catalog
-- Edit Book
 - Show All Books in Catalog
+- Show Sorted Books
+- Edit Book
 - Signup User
 - Show All Users
-- Rent
+- Show Sorted Users
+- Rent a Book
 - Show All Rentings
+- Show Sorted Rentings
 
 ### `Instructions`
 
