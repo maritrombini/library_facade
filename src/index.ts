@@ -56,19 +56,19 @@ const userId3 = facade.showAllUsers()[2].id;
 const rent1 = {
   userId: userId,
   bookId: bookId,
-  upto: "2022/13/05'",
+  upto: "2022/05/13'",
 };
 
 const rent2 = {
   userId: userId,
   bookId: bookId,
-  upto: "2022/24/04'",
+  upto: "2022/04/24'",
 };
 
 const rent3 = {
   userId: userId,
   bookId: bookId,
-  upto: "2022/30/06'",
+  upto: "2022/06/30'",
 };
 
 //RENT
