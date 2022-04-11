@@ -57,6 +57,21 @@ export class BookService {
       throw new Error(`BookService: ${error}`);
     }
   }
+  sort(): Book[] {
+    const booksCopy = this.books;
+    for (let i = 0; i < booksCopy.length - 1; i++) {
+      let minorEl = i;
+      for (let j = i + 1; j < booksCopy.length; j++) {
+        if (parseInt(booksCopy[j].id) < parseInt(booksCopy[minorEl].id)) {
+          minorEl = j;
+        }
+      }
+      const changePosition = booksCopy[minorEl];
+      booksCopy[minorEl] = booksCopy[i];
+      booksCopy[i] = changePosition;
+    }
+    return booksCopy;
+  }
 }
 
 export class Rent {
@@ -83,5 +98,22 @@ export class RentService {
   }
   showRentings(): Rent[] {
     return this.rents;
+  }
+  showSortedRentings(): Rent[] {
+    const rentsCopy = this.rents;
+    for (let i = 0; i < rentsCopy.length - 1; i++) {
+      let minorEl = i;
+      for (let j = i + 1; j < rentsCopy.length; j++) {
+        if (
+          parseInt(rentsCopy[j].userId) < parseInt(rentsCopy[minorEl].userId)
+        ) {
+          minorEl = j;
+        }
+      }
+      const changePosition = rentsCopy[minorEl];
+      rentsCopy[minorEl] = rentsCopy[i];
+      rentsCopy[i] = changePosition;
+    }
+    return rentsCopy;
   }
 }

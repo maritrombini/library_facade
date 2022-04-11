@@ -1,4 +1,5 @@
 import { Book, Rent } from "Books/Book";
+import { User } from "Users/User";
 
 export interface ILibraryFacade {
   /*
@@ -21,13 +22,20 @@ export interface ILibraryFacade {
     */
   showAllBooksInCatalog(): Book[];
 
+  // Método utilizado para ordenar os livros
+  findSortedBooks(): Book[];
+
   /*
       Método utilizado para cadastrar um usuário
         - O 'fullName' deve ter mais de uma palavra (você pode identificar isso checando se há um espaço entre as palavras)
         - O 'fullName' não pode ser vazio ou nulo
         - O 'address' não pode ser vazio ou nulo
     */
+
   signupUser(fullName: string, address: string): void;
+
+  // Método utilizado para ordenar os usuários
+  findSortedUsers(): User[];
 
   /*
       Método utilizado para que o cliente com id 'userId' alugue
@@ -38,6 +46,7 @@ export interface ILibraryFacade {
       Obs.: O formato da data 'upto' é ser: 'YYYY/MM/DD', não precisa
       validar essa data, assuma que ela sempre será dada corretamente
     */
+
   rent(userId: string, bookId: string, upto: string): void;
 
   /*
@@ -45,4 +54,7 @@ export interface ILibraryFacade {
       livros até o momento.
    */
   showAllRentings(): Rent[];
+
+  // Método utilizado para ordenar os empréstimos
+  findSortedRents(): Rent[];
 }

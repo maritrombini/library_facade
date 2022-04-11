@@ -27,4 +27,19 @@ export class UserService {
   showAllUsers(): User[] {
     return this.users;
   }
+  sortUsers(): User[] {
+    const usersCopy = this.users;
+    for (let i = 0; i < usersCopy.length - 1; i++) {
+      let minorEl = i;
+      for (let j = i + 1; j < usersCopy.length; j++) {
+        if (parseInt(usersCopy[j].id) < parseInt(usersCopy[minorEl].id)) {
+          minorEl = j;
+        }
+      }
+      const changePosition = usersCopy[minorEl];
+      usersCopy[minorEl] = usersCopy[i];
+      usersCopy[i] = changePosition;
+    }
+    return usersCopy;
+  }
 }

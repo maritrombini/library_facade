@@ -27,4 +27,4 @@
 
 ## Code Example
 
-<img src="lib.png" align="center" alt="Code example">
+<img src="./src/Image/lib.png" align="center" alt="Code example">

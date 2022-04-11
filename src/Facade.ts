@@ -16,16 +16,25 @@ export class Facade implements ILibraryFacade {
   showAllBooksInCatalog(): Book[] {
     return this.bookService.showAll();
   }
+  findSortedBooks(): Book[] {
+    return this.bookService.sort();
+  }
   signupUser(fullName: string, address: string): void {
     this.userService.signup(fullName, address);
   }
   showAllUsers(): User[] {
     return this.userService.showAllUsers();
   }
+  findSortedUsers(): User[] {
+    return this.userService.sortUsers();
+  }
   rent(userId: string, bookId: string, upto: string): void {
     this.rentService.rent(userId, bookId, upto);
   }
   showAllRentings(): Rent[] {
     return this.rentService.showRentings();
+  }
+  findSortedRents(): Rent[] {
+    return this.rentService.showSortedRentings();
   }
 }
