@@ -8,7 +8,7 @@ export class Book {
       throw new Error(
         `Title must be less than ${LIMITCHARACTERS} characters! Limit exceeded!`
       );
-    } else if (!title || title === null) {
+    } else if (!title) {
       throw new Error(`Title not found. You must provide a valid title!`);
     }
     this.id = id;

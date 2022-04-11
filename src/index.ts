@@ -14,8 +14,8 @@ const facade = new Facade();
 facade.addBookToCatalog(book1);
 facade.addBookToCatalog(book2);
 
-const userId = facade.showAllUsers()[0].id;
-console.log(userId);
+//const userId = facade.showAllUsers()[0].id;
+//console.log(userId);
 
 //SHOW ALL BOOKS
 console.log(
@@ -33,13 +33,14 @@ console.log(
 );
 
 //--------------------
-const rent1 = {
+/*const rent1 = {
   userId: userId,
   bookId: bookId,
   upto: "2022/13/05'",
 };
+*/
 
-facade.rent(rent1.userId, rent1.bookId, rent1.upto);
+//facade.rent(rent1.userId, rent1.bookId, rent1.upto);
 //console.log(
 // "\n +--- Show All Books in Catalog ---+ \n",
 // facade.showAllRentings()
