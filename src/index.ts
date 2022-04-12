@@ -5,10 +5,13 @@ const book2 = "Mastering APIs";
 const book3 = "React Fundamentals";
 const changedBook = "Troll-Oriented Programming";
 
+console.log(book1);
+
 const user1 = {
   name: "Mari Trombini",
   address: "Jr Street",
 };
+console.log(user1);
 
 const user2 = {
   name: "Wes Silva",

@@ -3,6 +3,18 @@ export class User {
   fullName: string;
   address: string;
   constructor(id: string, fullName: string, address: string) {
+    const checkSpace = (fullName: string) => /\s/g.test(fullName);
+    if (!fullName) {
+      throw new Error(
+        `You must provide a valid name! Insert name and lastname!`
+      );
+    } else if (!checkSpace(fullName)) {
+      throw new Error(
+        `You must provide a valid name! Insert name and lastname!`
+      );
+    } else if (!address) {
+      throw new Error(`You must provide a valid addres! Insert address!`);
+    }
     this.id = id;
     this.fullName = fullName;
     this.address = address;
@@ -18,6 +30,7 @@ export class UserService {
         fullName,
         address
       );
+
       this.users.push(user);
       return user;
     } catch (error) {
