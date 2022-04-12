@@ -14,6 +14,8 @@ export class User {
       );
     } else if (!address) {
       throw new Error(`You must provide a valid addres! Insert address!`);
+    } else if (!checkSpace(address)) {
+      throw new Error(`You must provide a valid address!`);
     }
     this.id = id;
     this.fullName = fullName;
