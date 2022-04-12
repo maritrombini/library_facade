@@ -8,18 +8,18 @@ const changedBook = "Troll-Oriented Programming";
 console.log(book1);
 
 const user1 = {
-  name: "Mari Trombini",
+  fullName: "Mari Trombini",
   address: "Jr Street",
 };
 console.log(user1);
 
 const user2 = {
-  name: "Wes Silva",
+  fullName: "Wes Silva",
   address: "Sr Road",
 };
 
 const user3 = {
-  name: "Vini Yamaha",
+  fullName: "Vini Yamaha",
   address: "Jr Avenue",
 };
 
@@ -50,9 +50,9 @@ console.log(
 );
 
 //SIGNUP USER
-facade.signupUser(user1.name, user1.address);
-facade.signupUser(user2.name, user2.address);
-facade.signupUser(user3.name, user3.address);
+facade.signupUser(user1.fullName, user1.address);
+facade.signupUser(user2.fullName, user2.address);
+facade.signupUser(user3.fullName, user3.address);
 
 //SHOW ALL USERS
 
