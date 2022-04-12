@@ -19,7 +19,7 @@ export class Book {
       throw new Error(
         `Title must be less than ${LIMITCHARACTERS} characters! Limit exceeded!`
       );
-    } else if (!newTitle || newTitle === null) {
+    } else if (!newTitle) {
       throw new Error(
         `Cannot edit, title not found. You must provide a valid title!`
       );
