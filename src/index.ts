@@ -5,13 +5,10 @@ const book2 = "Mastering APIs";
 const book3 = "React Fundamentals";
 const changedBook = "Troll-Oriented Programming";
 
-console.log(book1);
-
 const user1 = {
   fullName: "Mari Trombini",
   address: "Jr Street",
 };
-console.log(user1);
 
 const user2 = {
   fullName: "Wes Silva",
@@ -44,6 +41,10 @@ const bookId2 = facade.showAllBooksInCatalog()[1].id;
 const bookId3 = facade.showAllBooksInCatalog()[2].id;
 facade.editBookInCatalog(bookId, changedBook);
 
+const bookTitle = facade.showAllBooksInCatalog()[0].title;
+const bookTitle2 = facade.showAllBooksInCatalog()[1].title;
+const bookTitle3 = facade.showAllBooksInCatalog()[2].title;
+
 console.log(
   "\n +--- Show All Books in Catalog After Edit Method ---+ \n",
   facade.showAllBooksInCatalog()
@@ -68,27 +69,30 @@ console.log("\n +--- Show Sorted Users ---+ \n", facade.findSortedUsers());
 const rent1 = {
   userId: userId,
   bookId: bookId,
+  title: bookTitle,
   upto: "2022/05/13'",
 };
 
 const rent2 = {
   userId: userId2,
   bookId: bookId2,
+  title: bookTitle2,
   upto: "2022/04/24'",
 };
 
 const rent3 = {
   userId: userId3,
   bookId: bookId3,
+  title: bookTitle3,
   upto: "2022/06/30'",
 };
 
 //RENT
-facade.rent(rent1.userId, rent1.bookId, rent1.upto);
+facade.rent(rent1.userId, rent1.bookId, rent1.title, rent1.upto);
 
-facade.rent(rent2.userId, rent2.bookId, rent2.upto);
+facade.rent(rent2.userId, rent2.bookId, rent2.title, rent2.upto);
 
-facade.rent(rent3.userId, rent3.bookId, rent3.upto);
+facade.rent(rent3.userId, rent3.bookId, rent3.title, rent3.upto);
 
 //SHOW ALL RENTINGS
 console.log("\n +--- Show All Rentings ---+ \n", facade.showAllRentings());

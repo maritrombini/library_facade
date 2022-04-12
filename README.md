@@ -30,4 +30,5 @@
 
 ## Code Example
 
-<img src="./src/Image/lib.png" align="center" alt="Code example">
+<img src="./src/Image/lib1.png" align="center" alt="Code example">
+<img src="./src/Image/lib2.png" align="center" alt="Code example">

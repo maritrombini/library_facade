@@ -47,7 +47,7 @@ export interface ILibraryFacade {
       validar essa data, assuma que ela sempre será dada corretamente
     */
 
-  rent(userId: string, bookId: string, upto: string): void;
+  rent(userId: string, bookId: string, bookTitle: string, upto: string): void;
 
   /*
       Método utilizado para mostrar todos os aluguéis de
