@@ -77,22 +77,22 @@ export class BookService {
 export class Rent {
   userId: string;
   bookId: string;
-  title: string;
+  bookTitle: string;
   upto: string;
 
-  constructor(userId: string, bookId: string, title: string, upto: string) {
+  constructor(userId: string, bookId: string, bookTitle: string, upto: string) {
     this.userId = userId;
     this.bookId = bookId;
-    this.title = title;
+    this.bookTitle = bookTitle;
     this.upto = upto;
   }
 }
 
 export class RentService {
   rents: Rent[] = [];
-  rent(userId: string, bookId: string, title: string, upto: string) {
+  rent(userId: string, bookId: string, bookTitle: string, upto: string) {
     try {
-      const rentBook = new Rent(userId, bookId, title, upto);
+      const rentBook = new Rent(userId, bookId, bookTitle, upto);
       this.rents.push(rentBook);
       return rentBook;
     } catch (error) {
