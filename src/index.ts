@@ -6,7 +6,7 @@ const book3 = "React Fundamentals";
 const changedBook = "Troll-Oriented Programming";
 
 const user1 = {
-  fullName: "Mari ",
+  fullName: "Mari Trombini",
   address: "Jr Street",
 };
 

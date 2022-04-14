@@ -3,7 +3,7 @@ export class User {
   fullName: string;
   address: string;
   constructor(id: string, fullName: string, address: string) {
-    const checkSpace = (fullName: string) => /\s/g.test(fullName);
+    const checkSpace = (fullName: string) => /(\w+)\s+(\w+)/.test(fullName);
     if (!fullName) {
       throw new Error(
         `You must provide a valid name! Insert name and lastname!`
