@@ -1,4 +1,5 @@
-import { Book, Rent } from "Books/Book";
+import { Book } from "Books/Book";
+import { Rent } from "Rent/Rent";
 import { User } from "Users/User";
 
 export interface ILibraryFacade {

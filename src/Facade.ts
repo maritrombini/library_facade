@@ -1,32 +1,32 @@
 import { ILibraryFacade } from "./ILFacade/ILFacade";
-import { Book, BookService, Rent, RentService } from "./Books/Book";
-import { User, UserService } from "./Users/User";
+import { Book } from "./Books/Book";
+import { User } from "./Users/User";
+import { BookService } from "../src/Books/BookService";
+import { Rent } from "Rent/Rent";
+import { RentService } from "../src/Rent/RentService";
+import { UserService } from "../src/Users/UserService";
 
 export class Facade implements ILibraryFacade {
-  bookService = new BookService();
-  userService = new UserService();
-  rentService = new RentService();
-
   addBookToCatalog(title: string): void {
-    this.bookService.add(title);
+    BookService.getInstance().add(title);
   }
   editBookInCatalog(bookId: string, newTitle: string): void {
-    this.bookService.edit(bookId, newTitle);
+    BookService.getInstance().edit(bookId, newTitle);
   }
   showAllBooksInCatalog(): Book[] {
-    return this.bookService.showAll();
+    return BookService.getInstance().showAll();
   }
   findSortedBooks(): Book[] {
-    return this.bookService.sort();
+    return BookService.getInstance().sort();
   }
   signupUser(fullName: string, address: string): void {
-    this.userService.signup(fullName, address);
+    UserService.getInstance().signup(fullName, address);
   }
   showAllUsers(): User[] {
-    return this.userService.showAllUsers();
+    return UserService.getInstance().showAllUsers();
   }
   findSortedUsers(): User[] {
-    return this.userService.sortUsers();
+    return UserService.getInstance().sortUsers();
   }
   rent(
     userId: string,
@@ -35,12 +35,12 @@ export class Facade implements ILibraryFacade {
     bookTitle: string,
     upto: string
   ): void {
-    this.rentService.rent(userId, userName, bookId, bookTitle, upto);
+    RentService.getInstance().rent(userId, userName, bookId, bookTitle, upto);
   }
   showAllRentings(): Rent[] {
-    return this.rentService.showRentings();
+    return RentService.getInstance().showRentings();
   }
   findSortedRents(): Rent[] {
-    return this.rentService.showSortedRentings();
+    return RentService.getInstance().showSortedRentings();
   }
 }
