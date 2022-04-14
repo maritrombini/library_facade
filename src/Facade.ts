@@ -28,8 +28,14 @@ export class Facade implements ILibraryFacade {
   findSortedUsers(): User[] {
     return this.userService.sortUsers();
   }
-  rent(userId: string, bookId: string, bookTitle: string, upto: string): void {
-    this.rentService.rent(userId, bookId, bookTitle, upto);
+  rent(
+    userId: string,
+    userName: string,
+    bookId: string,
+    bookTitle: string,
+    upto: string
+  ): void {
+    this.rentService.rent(userId, userName, bookId, bookTitle, upto);
   }
   showAllRentings(): Rent[] {
     return this.rentService.showRentings();

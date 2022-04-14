@@ -68,6 +68,7 @@ console.log("\n +--- Show Sorted Users ---+ \n", facade.findSortedUsers());
 
 const rent1 = {
   userId: userId,
+  userName: user1.fullName,
   bookId: bookId,
   bookTitle: bookTitle,
   upto: "2022/05/13'",
@@ -75,6 +76,7 @@ const rent1 = {
 
 const rent2 = {
   userId: userId2,
+  userName: user2.fullName,
   bookId: bookId2,
   bookTitle: bookTitle2,
   upto: "2022/04/24'",
@@ -82,17 +84,36 @@ const rent2 = {
 
 const rent3 = {
   userId: userId3,
+  userName: user3.fullName,
   bookId: bookId3,
   bookTitle: bookTitle3,
   upto: "2022/06/30'",
 };
 
 //RENT
-facade.rent(rent1.userId, rent1.bookId, rent1.bookTitle, rent1.upto);
+facade.rent(
+  rent1.userId,
+  rent1.userName,
+  rent1.bookId,
+  rent1.bookTitle,
+  rent1.upto
+);
 
-facade.rent(rent2.userId, rent2.bookId, rent2.bookTitle, rent2.upto);
+facade.rent(
+  rent2.userId,
+  rent2.userName,
+  rent2.bookId,
+  rent2.bookTitle,
+  rent2.upto
+);
 
-facade.rent(rent3.userId, rent3.bookId, rent3.bookTitle, rent3.upto);
+facade.rent(
+  rent3.userId,
+  rent3.userName,
+  rent3.bookId,
+  rent3.bookTitle,
+  rent3.upto
+);
 
 //SHOW ALL RENTINGS
 console.log("\n +--- Show All Rentings ---+ \n", facade.showAllRentings());

@@ -76,12 +76,20 @@ export class BookService {
 
 export class Rent {
   userId: string;
+  userName: string;
   bookId: string;
   bookTitle: string;
   upto: string;
 
-  constructor(userId: string, bookId: string, bookTitle: string, upto: string) {
+  constructor(
+    userId: string,
+    userName: string,
+    bookId: string,
+    bookTitle: string,
+    upto: string
+  ) {
     this.userId = userId;
+    this.userName = userName;
     this.bookId = bookId;
     this.bookTitle = bookTitle;
     this.upto = upto;
@@ -90,9 +98,15 @@ export class Rent {
 
 export class RentService {
   rents: Rent[] = [];
-  rent(userId: string, bookId: string, bookTitle: string, upto: string) {
+  rent(
+    userId: string,
+    userName: string,
+    bookId: string,
+    bookTitle: string,
+    upto: string
+  ) {
     try {
-      const rentBook = new Rent(userId, bookId, bookTitle, upto);
+      const rentBook = new Rent(userId, userName, bookId, bookTitle, upto);
       this.rents.push(rentBook);
       return rentBook;
     } catch (error) {
