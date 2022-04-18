@@ -1,14 +1,12 @@
 import { ILibraryFacade } from "./ILFacade/ILFacade";
-import { Book } from "./Books/Book";
-import { User } from "./Users/User";
-import { BookService } from "../src/Books/BookService";
-import { Rent } from "Rent/Rent";
-import { RentService } from "../src/Rent/RentService";
-import { UserService } from "../src/Users/UserService";
+import { Book, BookService } from "./Books";
+import { Rent, RentService } from "./Rent";
+import { User, UserService } from "./Users";
+import { TAddBookParams } from "Books/BookType";
 
 export class Facade implements ILibraryFacade {
-  addBookToCatalog(title: string): void {
-    BookService.getInstance().add(title);
+  addBookToCatalog(bookParams: TAddBookParams): void {
+    BookService.getInstance().add(bookParams);
   }
   editBookInCatalog(bookId: string, newTitle: string): void {
     BookService.getInstance().edit(bookId, newTitle);
@@ -43,4 +41,11 @@ export class Facade implements ILibraryFacade {
   findSortedRents(): Rent[] {
     return RentService.getInstance().showSortedRentings();
   }
+  showRentPrice(bookId: string): number {
+    return 0;
+  }
+  showBillingHistory(userId: string): string {
+    return "OK";
+  }
+  pay(rentId: string): void {}
 }

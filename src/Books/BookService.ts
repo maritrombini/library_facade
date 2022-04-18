@@ -1,4 +1,5 @@
 import { Book } from "./Book";
+import { TAddBookParams } from "./BookType";
 
 export class BookService {
   private static instance: BookService;
@@ -10,11 +11,15 @@ export class BookService {
     }
     return BookService.instance;
   }
-  add(title: string) {
+  add(bookParams: TAddBookParams): Book {
+    const { type, title, pages, year } = bookParams;
     try {
       const book = new Book(
         Math.trunc(Math.random() * 50 + 1).toString(),
-        title
+        type,
+        title,
+        pages,
+        year
       );
       this.books.push(book);
       return book;

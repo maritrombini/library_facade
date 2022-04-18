@@ -45,4 +45,7 @@ export class RentService {
     }
     return rentsCopy;
   }
+  showRentPrice(bookId: string): number {
+    return;
+  }
 }

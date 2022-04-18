@@ -1,8 +1,27 @@
+import { TAddBookParams } from "Books/BookType";
 import { Facade } from "./Facade";
 
-const book1 = "Clean Code";
-const book2 = "Mastering APIs";
-const book3 = "React Fundamentals";
+const book1: TAddBookParams = {
+  type: "Antigo",
+  title: "Clean Code",
+  pages: 431,
+  year: "2008",
+};
+
+const book2: TAddBookParams = {
+  type: "Lançamento",
+  title: "Mastering APIs",
+  pages: 560,
+  year: "2022",
+};
+
+const book3: TAddBookParams = {
+  type: "Premium",
+  title: "React Fundamentals",
+  pages: 1000,
+  year: "2020",
+};
+
 const changedBook = "Troll-Oriented Programming";
 
 const user1 = {

@@ -25,10 +25,3 @@
 
 - Clone the repository
 - Run the commands `npm install` and `npm start`
-
-</br>
-
-## Code Example
-
-<img src="./src/Image/lib1.png" widht="200px" align="center" alt="Code example">
-<img src="./src/Image/lib2.png" widht="180px" align="center" alt="Code example">
