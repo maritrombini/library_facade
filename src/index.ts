@@ -1,25 +1,9 @@
-import { BookService } from "Books/BookService";
 import { Facade } from "./Facade";
 
-const book1 = {
-  title: "",
-  type: "",
-};
-
-const book2 = {
-  title: "",
-  type: "",
-};
-
-const book3 = {
-  title: "",
-  type: "",
-};
-
-const changedBook = {
-  title: "Troll-Oriented Programming",
-  type: "Lançamento",
-};
+const book1 = "Clean Code";
+const book2 = "Mastering APIs";
+const book3 = "React Fundamentals";
+const changedBook = "Troll-Oriented Programming";
 
 const user1 = {
   fullName: "Mari Trombini",
@@ -38,15 +22,9 @@ const user3 = {
 
 //ADD BOOK
 const facade = new Facade();
-facade.addBookToCatalog((book1.title = "Clean Code"), (book1.type = "Antigo"));
-facade.addBookToCatalog(
-  (book2.title = "Mastering APIs"),
-  (book2.type = "Lançamento")
-);
-facade.addBookToCatalog(
-  (book3.title = "React Fundamentals"),
-  (book3.type = "Premium")
-);
+facade.addBookToCatalog(book1);
+facade.addBookToCatalog(book2);
+facade.addBookToCatalog(book3);
 
 //SHOW ALL BOOKS
 console.log(
@@ -61,18 +39,14 @@ console.log("\n +--- Show Sorted Books ---+ \n", facade.findSortedBooks());
 const bookId = facade.showAllBooksInCatalog()[0].id;
 const bookId2 = facade.showAllBooksInCatalog()[1].id;
 const bookId3 = facade.showAllBooksInCatalog()[2].id;
+facade.editBookInCatalog(bookId, changedBook);
 
 const bookTitle = facade.showAllBooksInCatalog()[0].title;
 const bookTitle2 = facade.showAllBooksInCatalog()[1].title;
 const bookTitle3 = facade.showAllBooksInCatalog()[2].title;
 
-const bookType = facade.showAllBooksInCatalog()[0].type;
-const bookType2 = facade.showAllBooksInCatalog()[1].type;
-const bookType3 = facade.showAllBooksInCatalog()[2].type;
-
-facade.editBookInCatalog(bookId, changedBook.title, changedBook.type);
 console.log(
-  "\n +--- Show All Books in Catalog after Edit Title and Type ---+ \n",
+  "\n +--- Show All Books in Catalog After Edit Method ---+ \n",
   facade.showAllBooksInCatalog()
 );
 
@@ -96,8 +70,7 @@ const rent1 = {
   userId: userId,
   userName: user1.fullName,
   bookId: bookId,
-  bookTitle: changedBook.title,
-  bookType: changedBook.type,
+  bookTitle: bookTitle,
   upto: "2022/05/13'",
 };
 
@@ -106,7 +79,6 @@ const rent2 = {
   userName: user2.fullName,
   bookId: bookId2,
   bookTitle: bookTitle2,
-  bookType: bookType2,
   upto: "2022/04/24'",
 };
 
@@ -115,7 +87,6 @@ const rent3 = {
   userName: user3.fullName,
   bookId: bookId3,
   bookTitle: bookTitle3,
-  bookType: bookType3,
   upto: "2022/06/30'",
 };
 
@@ -125,7 +96,6 @@ facade.rent(
   rent1.userName,
   rent1.bookId,
   rent1.bookTitle,
-  rent1.bookType,
   rent1.upto
 );
 
@@ -134,7 +104,6 @@ facade.rent(
   rent2.userName,
   rent2.bookId,
   rent2.bookTitle,
-  rent2.bookType,
   rent2.upto
 );
 
@@ -143,7 +112,6 @@ facade.rent(
   rent3.userName,
   rent3.bookId,
   rent3.bookTitle,
-  rent3.bookType,
   rent3.upto
 );
 

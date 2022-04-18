@@ -15,18 +15,10 @@ export class RentService {
     userName: string,
     bookId: string,
     bookTitle: string,
-    bookType: string,
     upto: string
   ) {
     try {
-      const rentBook = new Rent(
-        userId,
-        userName,
-        bookId,
-        bookTitle,
-        bookType,
-        upto
-      );
+      const rentBook = new Rent(userId, userName, bookId, bookTitle, upto);
       this.rents.push(rentBook);
       return rentBook;
     } catch (error) {
