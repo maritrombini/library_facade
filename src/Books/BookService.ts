@@ -10,11 +10,12 @@ export class BookService {
     }
     return BookService.instance;
   }
-  add(title: string) {
+  add(title: string, type: string) {
     try {
       const book = new Book(
         Math.trunc(Math.random() * 50 + 1).toString(),
-        title
+        title,
+        type
       );
       this.books.push(book);
       return book;
@@ -25,10 +26,10 @@ export class BookService {
   showAll(): Book[] {
     return this.books;
   }
-  edit(id: string, title: string) {
+  edit(id: string, title: string, type: string) {
     const editedBook = this.books.forEach((book) => {
       if (book.id === id) {
-        book.setTitle(title);
+        book.setTitleType(title, type);
       }
     });
     try {
@@ -37,6 +38,7 @@ export class BookService {
       throw new Error(`BookService: ${error}`);
     }
   }
+
   sort(): Book[] {
     const booksCopy = this.books;
     for (let i = 0; i < booksCopy.length - 1; i++) {
