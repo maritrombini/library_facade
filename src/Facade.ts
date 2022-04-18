@@ -2,7 +2,8 @@ import { ILibraryFacade } from "./ILFacade/ILFacade";
 import { Book, BookService } from "./Books";
 import { Rent, RentService } from "./Rent";
 import { User, UserService } from "./Users";
-import { TAddBookParams } from "Books/BookType";
+import { TAddBookParams, TBookType } from "Books/BookType";
+import { TRentParams } from "Rent/RentType";
 
 export class Facade implements ILibraryFacade {
   addBookToCatalog(bookParams: TAddBookParams): void {
@@ -26,14 +27,8 @@ export class Facade implements ILibraryFacade {
   findSortedUsers(): User[] {
     return UserService.getInstance().sortUsers();
   }
-  rent(
-    userId: string,
-    userName: string,
-    bookId: string,
-    bookTitle: string,
-    upto: string
-  ): void {
-    RentService.getInstance().rent(userId, userName, bookId, bookTitle, upto);
+  rent(rentParams: TRentParams): void {
+    RentService.getInstance().rent(rentParams);
   }
   showAllRentings(): Rent[] {
     return RentService.getInstance().showRentings();

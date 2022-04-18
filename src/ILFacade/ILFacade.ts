@@ -1,4 +1,5 @@
 import { Book } from "Books/Book";
+import { TBookType } from "Books/BookType";
 import { Rent } from "Rent/Rent";
 import { User } from "Users/User";
 
@@ -48,13 +49,7 @@ export interface ILibraryFacade {
       validar essa data, assuma que ela sempre será dada corretamente
     */
 
-  rent(
-    userId: string,
-    userName: string,
-    bookId: string,
-    bookTitle: string,
-    upto: string
-  ): void;
+  rent(rentParams: Rent): void;
 
   /*
       Método utilizado para mostrar todos os aluguéis de

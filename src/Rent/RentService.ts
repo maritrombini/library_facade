@@ -1,4 +1,6 @@
+import { TBookType } from "Books/BookType";
 import { Rent } from "./Rent";
+import { TRentParams } from "./RentType";
 
 export class RentService {
   private static instance: RentService;
@@ -10,15 +12,17 @@ export class RentService {
     }
     return RentService.instance;
   }
-  rent(
-    userId: string,
-    userName: string,
-    bookId: string,
-    bookTitle: string,
-    upto: string
-  ) {
+  rent(rentParams: TRentParams): Rent {
+    const { userId, userName, bookId, bookType, bookTitle, upto } = rentParams;
     try {
-      const rentBook = new Rent(userId, userName, bookId, bookTitle, upto);
+      const rentBook = new Rent(
+        userId,
+        userName,
+        bookId,
+        bookType,
+        bookTitle,
+        upto
+      );
       this.rents.push(rentBook);
       return rentBook;
     } catch (error) {
@@ -45,7 +49,16 @@ export class RentService {
     }
     return rentsCopy;
   }
+  /*
   showRentPrice(bookId: string): number {
+    /*
+   let price: number = this.rents.forEach((rent) => {
+      if (book.id === id) {
+        book.setTitle(title);
+      }
+    })
+   
+    })
     return;
-  }
+  }*/
 }
