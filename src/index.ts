@@ -118,6 +118,7 @@ const rent1: TRentParams = {
   upto: "2022/05/12",
   rentPrice: rentPrice,
   paymentStatus: paymentStatus,
+  rentDate: "2022/09/01",
 };
 
 const rent2: TRentParams = {
@@ -131,6 +132,7 @@ const rent2: TRentParams = {
   upto: "2022/08/04",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
+  rentDate: "2022/11/01",
 };
 
 const rent3: TRentParams = {
@@ -144,6 +146,7 @@ const rent3: TRentParams = {
   upto: "2022/09/10",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
+  rentDate: "2022/07/24",
 };
 
 const rent4: TRentParams = {
@@ -157,6 +160,7 @@ const rent4: TRentParams = {
   upto: "2022/12/19",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
+  rentDate: "2022/10/11",
 };
 
 const rent5: TRentParams = {
@@ -170,6 +174,7 @@ const rent5: TRentParams = {
   upto: "2022/10/08",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
+  rentDate: "2022/06/01",
 };
 
 const rent6: TRentParams = {
@@ -183,6 +188,7 @@ const rent6: TRentParams = {
   upto: "2022/11/01",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
+  rentDate: "2022/08/11",
 };
 
 //RENT

@@ -26,6 +26,7 @@ export class RentService {
       upto,
       rentPrice,
       paymentStatus,
+      rentDate,
     } = rentParams;
     try {
       const rentBook = new Rent(
@@ -39,7 +40,8 @@ export class RentService {
         bookPages,
         upto,
         rentPrice,
-        paymentStatus
+        paymentStatus,
+        rentDate
       );
       this.rents.push(rentBook);
       return rentBook;

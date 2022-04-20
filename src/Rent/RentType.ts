@@ -11,4 +11,5 @@ export type TRentParams = {
   upto: string;
   rentPrice: number;
   paymentStatus: boolean;
+  rentDate: string;
 };

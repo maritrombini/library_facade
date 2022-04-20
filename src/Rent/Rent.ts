@@ -12,6 +12,7 @@ export class Rent {
   upto: string;
   rentPrice: number;
   paymentStatus: boolean;
+  rentDate: string;
 
   constructor(
     rentId: string,
@@ -24,7 +25,8 @@ export class Rent {
     bookPages: number,
     upto: string,
     rentPrice: number,
-    paymentStatus: boolean
+    paymentStatus: boolean,
+    rentDate: string
   ) {
     this.rentId = rentId;
     this.userId = userId;
@@ -37,5 +39,6 @@ export class Rent {
     this.upto = upto;
     this.rentPrice = rentPrice;
     this.paymentStatus = paymentStatus;
+    this.rentDate = rentDate;
   }
 }
