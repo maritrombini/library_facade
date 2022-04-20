@@ -115,7 +115,7 @@ const rent1: TRentParams = {
   bookTitle: bookTitle,
   bookYear: bookYear,
   bookPages: bookPages,
-  upto: "2022/05/13",
+  upto: "2022/05/12",
   rentPrice: rentPrice,
   paymentStatus: paymentStatus,
 };
@@ -128,7 +128,7 @@ const rent2: TRentParams = {
   bookTitle: bookTitle2,
   bookYear: bookYear2,
   bookPages: bookPages2,
-  upto: "2022/04/24",
+  upto: "2022/08/04",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
 };
@@ -141,7 +141,7 @@ const rent3: TRentParams = {
   bookTitle: bookTitle3,
   bookYear: bookYear3,
   bookPages: bookPages3,
-  upto: "2022/06/30",
+  upto: "2022/09/10",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
 };
@@ -154,7 +154,7 @@ const rent4: TRentParams = {
   bookTitle: bookTitle2,
   bookYear: bookYear2,
   bookPages: bookPages2,
-  upto: "2022/10/28",
+  upto: "2022/12/19",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
 };
@@ -167,7 +167,7 @@ const rent5: TRentParams = {
   bookTitle: bookTitle3,
   bookYear: bookYear3,
   bookPages: bookPages3,
-  upto: "2022/11/01",
+  upto: "2022/10/08",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
 };
@@ -180,7 +180,7 @@ const rent6: TRentParams = {
   bookTitle: bookTitle2,
   bookYear: bookYear2,
   bookPages: bookPages2,
-  upto: "2022/10/28",
+  upto: "2022/11/01",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
 };
@@ -214,11 +214,14 @@ const billingUser = facade.showAllRentings()[0].userId;
 const billingUser2 = facade.showAllRentings()[1].userId;
 const billingUser3 = facade.showAllRentings()[2].userId;
 
-facade.showBillingHistory(userId);
-facade.showBillingHistory(userId2);
-
 //PAY
 facade.pay(rentId);
+
+//SHOW BILLING HISTORY
+facade.showBillingHistory(userId);
+facade.showBillingHistory(userId2);
+facade.showBillingHistory(userId3);
+
 console.log(
   "\n +--- Show Rentings After Pay Method---+ \n",
   facade.findSortedRents()

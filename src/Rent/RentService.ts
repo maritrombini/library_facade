@@ -69,10 +69,96 @@ export class RentService {
     return rentsCopy;
   }
 
-  showRentPrice(bookId: string) {}
+  showRentPrice(bookId: string) {
+    let calculation = 0;
+    const pricedRent = this.rents.forEach((rent) => {
+      if (rent.bookId === bookId) {
+        if (rent.bookType === "Lançamento") {
+          rent.rentPrice = 0.05;
+          calculation = rent.rentPrice * rent.bookPages;
+          rent.rentPrice = parseFloat(calculation.toFixed(2));
+          return calculation;
+        } else if (rent.bookType === "Antigo") {
+          rent.rentPrice = 5.0;
+          rent.bookYear = 2008;
+          calculation = rent.rentPrice + rent.bookYear / 100;
+          rent.rentPrice = parseFloat(calculation.toFixed(2));
+          return calculation;
+        } else if (rent.bookType === "Premium") {
+          rent.rentPrice = 40;
+          calculation = rent.rentPrice;
+          rent.rentPrice = parseFloat(calculation.toFixed(2));
+          return calculation;
+        }
+        return pricedRent;
+      }
+    });
+    try {
+      return calculation;
+    } catch (error) {
+      throw new Error(`BookService: ${error}`);
+    }
+  }
 
-  showBillings(userId: string) {}
+  showBillings(userId: string) {
+    console.log("\n +--- Show Billing History ---+ \n");
 
+    const priceRent = this.rents.forEach((rent) => {
+      if (rent.userId === userId) {
+        return userId;
+      }
+
+      return;
+    });
+    console.log("User ID ===> ", userId);
+
+    const pricedRent = this.rents.find((rent) => {
+      if (rent.userId === userId) {
+        console.log(`\nUsuário: ${rent.userName} | Ação: Ver Conta\n`);
+        return rent.userName;
+      }
+
+      return;
+    });
+
+    const userRent = this.rents.forEach((rent) => {
+      if (rent.userId === userId) {
+        let status = rent.paymentStatus;
+        if (status === false) {
+          status = "A Pagar";
+        } else {
+          status = "Pago";
+        }
+
+        console.log(
+          `\n*.${rent.bookTitle} | ${rent.rentPrice} | ${status}\n | ${rent.upto}`
+        );
+
+        if (status === "Pago") {
+          rent.rentPrice = 0;
+        }
+        return status;
+      }
+
+      return;
+    });
+
+    const rentReports = this.rents.map((rent) => {
+      if (rent.userId === userId) {
+        return rent.rentPrice;
+      }
+    });
+
+    let validRents = rentReports.filter(function (i) {
+      return i;
+    });
+
+    const userRentHistory = validRents.reduce((total, value) => {
+      return total + value;
+    });
+
+    console.log(`\nTotal a pagar: R$ ${userRentHistory}\n`);
+  }
   pay(rentId: string): void {
     const payRent = this.rents.forEach((rent) => {
       if (rent.rentId === rentId) {
