@@ -6,5 +6,9 @@ export type TRentParams = {
   bookId: string;
   bookType: TBookType;
   bookTitle: string;
+  bookYear: number;
+  bookPages: number;
   upto: string;
+  rentPrice: number;
+  paymentStatus: boolean;
 };

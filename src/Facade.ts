@@ -30,6 +30,7 @@ export class Facade implements ILibraryFacade {
   rent(rentParams: TRentParams): void {
     RentService.getInstance().rent(rentParams);
   }
+
   showAllRentings(): Rent[] {
     return RentService.getInstance().showRentings();
   }
@@ -37,10 +38,12 @@ export class Facade implements ILibraryFacade {
     return RentService.getInstance().showSortedRentings();
   }
   showRentPrice(bookId: string): number {
-    return 0;
+    return RentService.getInstance().showRentPrice(bookId);
   }
   showBillingHistory(userId: string): string {
-    return "OK";
+    return RentService.getInstance().showBillings(userId);
   }
-  pay(rentId: string): void {}
+  pay(rentId: string): void {
+    RentService.getInstance().pay(rentId);
+  }
 }

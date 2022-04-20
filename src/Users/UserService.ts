@@ -1,8 +1,10 @@
+import { Rent } from "Rent";
 import { User } from "./User";
 
 export class UserService {
   private static instance: UserService;
   users: User[] = [];
+  rents: [] = [];
   private constructor() {}
   static getInstance() {
     if (!UserService.instance) {

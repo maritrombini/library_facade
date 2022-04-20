@@ -1,7 +1,10 @@
+import { Rent } from "Rent";
+
 export class User {
   id: string;
   fullName: string;
   address: string;
+
   constructor(id: string, fullName: string, address: string) {
     const checkSpace = (fullName: string) => /(\w+)\s+(\w+)/.test(fullName);
     if (!fullName) {

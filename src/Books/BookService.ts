@@ -12,14 +12,15 @@ export class BookService {
     return BookService.instance;
   }
   add(bookParams: TAddBookParams): Book {
-    const { type, title, pages, year } = bookParams;
+    const { type, title, pages, year, rentPrice } = bookParams;
     try {
       const book = new Book(
         Math.trunc(Math.random() * 50 + 1).toString(),
         type,
         title,
         pages,
-        year
+        year,
+        rentPrice
       );
       this.books.push(book);
       return book;

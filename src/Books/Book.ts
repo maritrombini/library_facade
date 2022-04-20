@@ -8,12 +8,14 @@ export class Book {
   title: string;
   pages: number;
   year: string;
+  rentPrice: number;
   constructor(
     id: string,
     type: TBookType,
     title: string,
     pages: number,
-    year: string
+    year: string,
+    rentPrice: number
   ) {
     if (title.length >= LIMITCHARACTERS) {
       throw new Error(
@@ -27,6 +29,7 @@ export class Book {
     this.title = title;
     this.pages = pages;
     this.year = year;
+    this.rentPrice = rentPrice;
   }
   setTitle(newTitle: string): void {
     if (newTitle.length >= LIMITCHARACTERS) {
