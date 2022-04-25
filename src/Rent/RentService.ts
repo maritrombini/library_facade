@@ -103,16 +103,9 @@ export class RentService {
   }
 
   showBillings(userId: string) {
+    this.rents.sort((a, b) => (a.rentDate > b.rentDate ? -1 : 1));
+
     console.log("\n +--- Show Billing History ---+ \n");
-
-    const priceRent = this.rents.forEach((rent) => {
-      if (rent.userId === userId) {
-        return userId;
-      }
-
-      return;
-    });
-    console.log("User ID ===> ", userId);
 
     const pricedRent = this.rents.find((rent) => {
       if (rent.userId === userId) {
@@ -132,9 +125,11 @@ export class RentService {
           status = "Pago";
         }
 
-        console.log(
-          `\n*.${rent.bookTitle} | ${rent.rentPrice} | ${status}\n | ${rent.upto}`
-        );
+        if (rent.userId === userId) {
+          console.log(
+            `*${rent.bookTitle} | ${rent.rentPrice} | ${status}\nDate: ${rent.rentDate}\n`
+          );
+        }
 
         if (status === "Pago") {
           rent.rentPrice = 0;
@@ -151,8 +146,8 @@ export class RentService {
       }
     });
 
-    let validRents = rentReports.filter(function (i) {
-      return i;
+    let validRents = rentReports.filter(function (validValues) {
+      return validValues;
     });
 
     const userRentHistory = validRents.reduce((total, value) => {

@@ -118,7 +118,7 @@ const rent1: TRentParams = {
   upto: "2022/05/12",
   rentPrice: rentPrice,
   paymentStatus: paymentStatus,
-  rentDate: "2022/09/01",
+  rentDate: "2022/04/21",
 };
 
 const rent2: TRentParams = {
@@ -132,7 +132,7 @@ const rent2: TRentParams = {
   upto: "2022/08/04",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
-  rentDate: "2022/11/01",
+  rentDate: "2022/04/22",
 };
 
 const rent3: TRentParams = {
@@ -146,7 +146,7 @@ const rent3: TRentParams = {
   upto: "2022/09/10",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
-  rentDate: "2022/07/24",
+  rentDate: "2022/04/24",
 };
 
 const rent4: TRentParams = {
@@ -160,7 +160,7 @@ const rent4: TRentParams = {
   upto: "2022/12/19",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
-  rentDate: "2022/10/11",
+  rentDate: "2022/04/25",
 };
 
 const rent5: TRentParams = {
@@ -174,7 +174,7 @@ const rent5: TRentParams = {
   upto: "2022/10/08",
   rentPrice: rentPrice3,
   paymentStatus: paymentStatus,
-  rentDate: "2022/06/01",
+  rentDate: "2022/04/24",
 };
 
 const rent6: TRentParams = {
@@ -188,7 +188,7 @@ const rent6: TRentParams = {
   upto: "2022/11/01",
   rentPrice: rentPrice2,
   paymentStatus: paymentStatus,
-  rentDate: "2022/08/11",
+  rentDate: "2022/04/25",
 };
 
 //RENT
@@ -208,30 +208,22 @@ facade.showRentPrice(bookId3);
 facade.showRentPrice(bookId2);
 
 const rentId = facade.showAllRentings()[0].rentId;
-const rentId2 = facade.showAllRentings()[1].rentId;
-const rentId3 = facade.showAllRentings()[2].rentId;
 
 //SHOW ALL RENTINGS
 console.log("\n +--- Show All Rentings ---+ \n", facade.showAllRentings());
 
-//SHOW BILLINGS
-
-const billingUser = facade.showAllRentings()[0].userId;
-const billingUser2 = facade.showAllRentings()[1].userId;
-const billingUser3 = facade.showAllRentings()[2].userId;
-
 //PAY
 facade.pay(rentId);
-
-//SHOW BILLING HISTORY
-facade.showBillingHistory(userId);
-facade.showBillingHistory(userId2);
-facade.showBillingHistory(userId3);
 
 console.log(
   "\n +--- Show Rentings After Pay Method---+ \n",
   facade.findSortedRents()
 );
+
+//SHOW BILLING HISTORY
+facade.showBillingHistory(userId);
+facade.showBillingHistory(userId2);
+facade.showBillingHistory(userId3);
 
 //SHOW SORTED RENTINGS
 console.log("\n +--- Show Sorted Rentings ---+ \n", facade.findSortedRents());
